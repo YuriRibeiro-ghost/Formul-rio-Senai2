@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Portal Educacional</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="senai-165.png" type="image/png">
+  <link rel="shortcut icon" href="senai-165.png" type="image/png">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* FUNDO VANTA */
+    #background {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* CONTAINER DO FORMULÁRIO */
+    .login-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* LOGO */
+    .login-logo img { width: 200px; margin-bottom: 20px; }
+
+    /* FORMULÁRIO */
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 40px 35px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      width: 350px;
+      text-align: center;
+    }
+
+    .login-box h1 { font-size: 1.8rem; color: #222291; margin-bottom: 20px; }
+
+    .login-box label { display: block; text-align: left; font-weight: 600; margin: 10px 0 5px; color: #444; }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #be5820;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-box button:hover { background-color: #a34b1b; }
+
+    .login-box p { font-size: 0.9rem; margin-top: 10px; color: #555; }
+    .login-box p a { color: #555; text-decoration: underline; cursor: pointer; }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 600px) {
+      .login-box { width: 85%; padding: 30px 20px; }
+      .login-box h1 { font-size: 1.5rem; }
+      .login-box input, .login-box button { font-size: 0.95rem; }
+      .login-logo img { width: 150px; }
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .login-box { width: 60%; padding: 35px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FUNDO VANTA -->
+  <div id="background"></div>
+
+  <!-- FORMULÁRIO -->
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="SENAI_logo_2024.png" alt="SENAI">
+    </div>
+
+    <div class="login-box">
+      <h1>Portal Educacional</h1>
+      <form>
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" placeholder="Digite seu usuário" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+        <button type="submit">Entrar</button>
+        <p><a href="recuperar-senha.html">Esqueceu a senha?</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts VANTA via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      VANTA.NET({
+        el: "#background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xd45b13,
+        backgroundColor:  0x222291, // corrigido hexadecimal
+        points: 16.00,
+        maxDistance: 19.00,
+        spacing: 14.00
+      });
+    });
+  </script>
+
+</body>
+</html>
